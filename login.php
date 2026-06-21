@@ -76,7 +76,7 @@ if (isset($_POST["login"])) {
                     exit();
             }
         } else {
-            echo "<p class='warning'> Kriva lozinka </p>";
+            echo "<p class='warning-r'> Kriva lozinka </p>";
         }}
 }
 
