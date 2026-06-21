@@ -1,4 +1,5 @@
 <?php 
+session_start();
 include 'connect.php';
 define('UPLPATH', 'img/');
 $id = $_GET['id'];
@@ -32,6 +33,17 @@ $row = mysqli_fetch_array($result);?>
         <a href="registracija.php">Registracija</a>
         <a href="login.php">Login</a>
     </nav>
+        <div class="user">
+        <?php
+        if (isset($_SESSION["user"])) {
+            echo "Ulogiran: " . $_SESSION["user"];
+        } else {
+            echo "Niste prijavljeni";
+        }
+        if (isset($_SESSION["user"])) { ?>
+            <a class="edits" href="logout.php">Logout</a>
+        <?php } ?>
+    </div>
 </header>
 
 <div class="sport-banner">

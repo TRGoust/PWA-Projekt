@@ -36,10 +36,7 @@ define('UPLPATH', 'img/');
         }
         if (isset($_SESSION["user"])) { ?>
             <a class="edits" href="logout.php">Logout</a>
-        <?php 
-        } 
-        ?>
-
+        <?php } ?>
     </div>
 </header>
 

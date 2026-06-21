@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include 'connect.php';
 define('UPLPATH', 'img/');
 $kategorija = $_GET['kategorija'];
@@ -35,6 +35,17 @@ $result = mysqli_query($conn, $query);
             <a href="registracija.php">Registracija</a>
             <a href="login.php">Login</a>
         </nav>
+        <div class="user">
+            <?php
+            if (isset($_SESSION["user"])) {
+                echo "Ulogiran: " . $_SESSION["user"];
+            } else {
+                echo "Niste prijavljeni";
+            }
+            if (isset($_SESSION["user"])) { ?>
+                <a class="edits" href="logout.php">Logout</a>
+            <?php } ?>
+        </div>
     </header>
 
     <main class="container">

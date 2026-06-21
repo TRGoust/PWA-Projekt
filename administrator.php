@@ -60,6 +60,18 @@ mysqli_stmt_close($stmt);
             <a href="registracija.php">Registracija</a>
             <a href="login.php">Login</a>
         </nav>
+
+        <div class="user">
+            <?php
+            if (isset($_SESSION["user"])) {
+                echo "Ulogiran: " . $_SESSION["user"];
+            } else {
+                echo "Niste prijavljeni";
+            }
+            if (isset($_SESSION["user"])) { ?>
+                <a class="edits" href="logout.php">Logout</a>
+            <?php } ?>
+        </div>
     </header>
     
 <div class="article">
@@ -74,8 +86,6 @@ if (isset($_SESSION["user"])) {
     } else {
         echo "<p>Nemate administratorska prava</p>";
     }
-
-    echo "<a class='edits' href='logout.php'>Logout</a>";
 }
 ?>
 
