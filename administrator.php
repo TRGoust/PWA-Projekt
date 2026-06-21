@@ -87,6 +87,7 @@ $result = mysqli_query($conn, "SELECT * FROM vijesti ORDER BY datum DESC");
 
 while($row = mysqli_fetch_assoc($result)) {
 
+    echo "<img src=".UPLPATH.$row['slika'].">";
     echo "<h3>".$row['naslov']."</h3>";
     echo "<p> Kategorija: ".$row['kategorija']."<p>";
 
@@ -96,6 +97,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
     echo "<a class='edits' href='administrator.php?delete=".$row['id']."'> Obriši </a>";
 
+    echo "<hr>";
     echo "<hr>";
 }
 ?>
