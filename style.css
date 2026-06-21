@@ -171,9 +171,16 @@ input[type=submit]:hover {
     margin-top: 15px;
 }
 
-.warning{
+.warning-r{
     display: flex;
     justify-content: center;
     align-items: center;
     background: red;
+}
+
+.warning-g{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: greenyellow;
 }

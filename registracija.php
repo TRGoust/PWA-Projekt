@@ -70,7 +70,24 @@ if (
     $password2 = $_POST["password2"];
 
     if ($password1 != $password2) {
-        die("Lozinke se ne podudaraju!");}
+        die("<p class='warning-r'>Lozinke se ne podudaraju!</p>");
+    }
+
+    $stmt = mysqli_prepare(
+        $conn,
+        "SELECT id FROM korisnik WHERE username = ?"
+    );
+
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+
+    if (mysqli_stmt_num_rows($stmt) > 0) {
+        die("<p class='warning-r'>Korisničko ime već postoji!</p>");
+    }
+
+    mysqli_stmt_close($stmt);
+    
 
     $hash = password_hash($password1, CRYPT_BLOWFISH);
 
@@ -87,9 +104,9 @@ if (
     mysqli_stmt_bind_param($stmt, "sssss", $username, $ime, $prezime, $hash, $razina);
 
     if (mysqli_stmt_execute($stmt)) {
-        echo "<p class='warning>'Registracija uspješna!</P>";
+        echo "<p class='warning-g'>Registracija uspješna!</P>";
     } else {
-        echo "Greška pri registraciji!";
+        echo "<p class='warning-r'>Greška pri registraciji!</P>";
     }
 
     mysqli_stmt_close($stmt);

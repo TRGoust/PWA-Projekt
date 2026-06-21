@@ -28,8 +28,6 @@ define('UPLPATH', 'img/');
     </nav>
 </header>
 
-<h2>Login</h2>
-
 <div class="article">
     <form method="POST">
 
