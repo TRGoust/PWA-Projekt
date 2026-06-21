@@ -15,7 +15,7 @@ define('UPLPATH', 'img/');
 <body>
 
 <header>
-    <div class="logo">Registracija</div>
+    <div class="logo">BBC</div>
 
     <nav>
         <a href="index.php">Home</a>
@@ -74,7 +74,7 @@ if (
 
     $hash = password_hash($password1, CRYPT_BLOWFISH);
 
-    $razina = "admin";
+    $razina = "user";
 
     $stmt = mysqli_prepare(
         $conn,
