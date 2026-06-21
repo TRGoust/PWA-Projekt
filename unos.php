@@ -12,11 +12,13 @@
     <div class="logo">BBC</div>
 
     <nav>
-        <a href="index.html">Home</a>
-        <a href="#">News</a>
-        <a href="clanak.html">Sport</a>
-        <a href="unos.html">Unos</a>
-        <a href="#">Administracija</a>
+        <a href="index.php">Home</a>
+        <a href="kategorija.php?kategorija=News">News</a>
+        <a href="kategorija.php?kategorija=Sport">Sport</a>
+        <a href="unos.php">Unos</a>
+        <a href="administrator.php">Administracija</a>
+        <a href="registracija.php">Registracija</a>
+        <a href="login.php">Login</a>
     </nav>
 </header>
 
@@ -36,7 +38,7 @@
         <textarea name="tekst" rows="10" required></textarea>
 
         <label>URL slike:</label>
-        <input type="text" name="slika" required>
+        <input type="file" name="slika" required>
 
         <label>Kategorija:</label>
         <select name="kategorija">
@@ -44,6 +46,8 @@
             <option value="Sport">Sport</option>
         </select>
 
+        <label>Arhiviraj vijest: <input type="checkbox" name="arhiva" value="1"> </label>
+        
         <input type="submit" value="Pošalji">
 
     </form>
@@ -51,7 +55,7 @@
 </div>
 
 <footer>
-    Copyright © 2019 BBC.
+Josip Brkić, jbrkic@tvz.hr, 2026
 </footer>
     
 </body>

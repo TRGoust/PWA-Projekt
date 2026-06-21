@@ -6,7 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f2f2f2;
+    background: #fcf5f5;
+    height: 100%;
 }
 
 header {
@@ -54,12 +55,20 @@ nav a {
 }
 
 .cards {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
 .card {
-    width: 32%;
+    width: 100%;
+}
+
+.article img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .card img {
@@ -78,7 +87,7 @@ nav a {
 }
 
 .sport-banner {
-    background: #ffd230;
+    background: #f7d767;
     padding: 15px 250px;
 }
 
@@ -104,7 +113,7 @@ nav a {
 }
 
 footer {
-    background: #444;
+    background: #505050;
     color: white;
     text-align: center;
     padding: 20px;
@@ -121,23 +130,50 @@ label {
     font-weight: bold;
 }
 
-input[type=text],
+input[type=text],input[type=password],
 textarea,
 select {
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #d8cece;
 }
 
 input[type=submit] {
     margin-top: 20px;
     padding: 10px;
-    background: #222;
+    background: #272727;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 input[type=submit]:hover {
-    background: #444;
+    background: #4b4a4a;
+}
+
+.edits{
+    padding: 10px 15px; 
+    background: #000000; 
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.edits:hover{
+    padding: 10px 15px; 
+    background: #242424; 
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+.admin{
+    margin-top: 15px;
+}
+
+.warning{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: red;
 }
